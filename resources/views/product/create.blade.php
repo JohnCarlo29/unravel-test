@@ -1,4 +1,7 @@
 <div>
+    <h3>Adding of Product</h3>
+    <br/>
+    <br/>
     <form method="post" action="{{ route('products.store') }}">
         @csrf
         Product Name: <input type="text" name="name" value="" /> <br/>

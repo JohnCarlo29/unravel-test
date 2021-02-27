@@ -1,4 +1,7 @@
 <div>
+    <h3>Product Listing</h3>
+    <br/>
+    <br/>
     <a href="{{ route('products.create') }}">Add New Product</a>
 
     @if(session('success-message'))

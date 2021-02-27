@@ -1,4 +1,7 @@
 <div>
+    <h3>Product Editing</h3>
+    <br/>
+    <br/>
     <form method="post" action="{{ route('products.update', $product->id) }}">
         @csrf
         @method('PUT')

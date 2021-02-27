@@ -15,4 +15,9 @@ class Customer extends Model
         'address',
         'last_transaction',
     ];
+
+    public function transactions()
+    {
+        return $this->hasMany(Transaction::class);
+    }
 }

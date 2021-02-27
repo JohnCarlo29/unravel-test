@@ -14,7 +14,9 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        //
+        $transactions = Transaction::with(['customer:id,name', 'product:id,name'])->paginate();
+
+        return view('transaction.index', compact('transactions'));
     }
 
     /**
@@ -46,7 +48,9 @@ class TransactionController extends Controller
      */
     public function show(Transaction $transaction)
     {
-        //
+        $transaction->load(['customer:id,name', 'product:id,name']);
+
+        return view('transaction.show', compact('transaction'));
     }
 
     /**

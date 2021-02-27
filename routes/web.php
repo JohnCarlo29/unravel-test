@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,7 @@ Route::get('/', function () {
 
 Route::resource('products', ProductController::class);
 Route::resource('customers', CustomerController::class)->only(['index', 'show']);
+Route::resource('transactions', TransactionController::class)->only(['index', 'show']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
