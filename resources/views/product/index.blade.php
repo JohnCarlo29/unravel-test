@@ -1,8 +1,13 @@
-<div>
-    <h3>Product Listing</h3>
-    <br/>
-    <br/>
-    <a href="{{ route('products.create') }}">Add New Product</a>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            {{ __('Product Listing') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12 px-24">
+
+    <a href="{{ route('products.create') }}">Add New Product HERE</a>
 
     @if(session('success-message'))
         <h3 style="color:deepskyblue">{{ session('success-message') }}</h3>
@@ -12,7 +17,10 @@
         <h3 style="color:olive">{{ session('error-message') }}</h3>
     @endif
 
-    <table>
+    <br/>
+    <br/>
+
+    <table style="width: 1000px;">
         <tr>
             <th>Product</th>
             <th>Description</th>
@@ -46,3 +54,4 @@
 
     {{ $products->links() }}
 </div>
+</x-app-layout>

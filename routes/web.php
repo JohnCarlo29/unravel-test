@@ -20,12 +20,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('products', ProductController::class);
-Route::resource('customers', CustomerController::class)->only(['index', 'show']);
-Route::resource('transactions', TransactionController::class)->only(['index', 'show']);
+Route::middleware(['auth'])->group(function () {
+    Route::resource('products', ProductController::class);
+    Route::resource('customers', CustomerController::class)->only(['index', 'show']);
+    Route::resource('transactions', TransactionController::class)->only(['index', 'show']);
+    
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
