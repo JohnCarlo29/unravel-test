@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\Models\Product;
-use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -32,13 +32,12 @@ class ProductController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ProductRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
-        // $formData = $request->validated();
-        $formData = $request->all();
+        $formData = $request->validated();
         Product::create($formData);
 
         return redirect()->route('products.index')->with('success-message', 'Product Saved');
@@ -69,15 +68,13 @@ class ProductController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\ProductRequest  $request
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(ProductRequest $request, Product $product)
     {
-        // $formData = $request->validated();
-
-        $formData = $request->all();
+        $formData = $request->validated();
         
         if ($product->update($formData)) {
             return redirect()->route('products.index')->with('success-message', 'Product Updated');

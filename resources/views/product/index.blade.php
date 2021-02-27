@@ -5,11 +5,11 @@
     <a href="{{ route('products.create') }}">Add New Product</a>
 
     @if(session('success-message'))
-        <h3>{{ session('success-message') }}</h3>
+        <h3 style="color:deepskyblue">{{ session('success-message') }}</h3>
     @endif
 
     @if(session('error-message'))
-        <h3>{{ session('error-message') }}</h3>
+        <h3 style="color:olive">{{ session('error-message') }}</h3>
     @endif
 
     <table>

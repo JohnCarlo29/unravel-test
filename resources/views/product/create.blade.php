@@ -2,6 +2,17 @@
     <h3>Adding of Product</h3>
     <br/>
     <br/>
+
+    @if ($errors->any())
+    <div style="background-color: red">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <form method="post" action="{{ route('products.store') }}">
         @csrf
         Product Name: <input type="text" name="name" value="" /> <br/>
