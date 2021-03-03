@@ -32,7 +32,9 @@ class LoginController extends Controller
             return redirect()->intended('/admin/dashboard');
         }
 
-        return back()->withInput($request->only('email', 'remember'));
+        return back()->withInput($request->only('email', 'remember'))->withErrors([
+            'email' => __('auth.failed'),
+        ]);
     }
 
     public function destroy(Request $request)
