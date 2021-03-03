@@ -29,7 +29,7 @@ STRIPE_SECRET=sk_test_51IQd78HMlbRjqKZp3cW37V5jqUrXyBkPyCdOMjMUUj25kk9uAb3H76ksa
 
 ```
 composer install
-npm install && npm run dev
+php artisan key:generate
 php artisan migrate:fresh --seed
 php artisan serve
 ```
