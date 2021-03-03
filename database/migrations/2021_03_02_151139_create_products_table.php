@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->integer('price')->default(0);
             $table->string('slug')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

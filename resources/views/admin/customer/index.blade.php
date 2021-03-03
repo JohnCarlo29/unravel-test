@@ -1,8 +1,8 @@
-<x-app-layout>
+<x-admin-layout>
     <x-slot name="header">
         <div class="flex justify-between">
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                {{ __('Your Cart') }}
+                {{ __('Customer List') }}
             </h2>
         </div>
     </x-slot>
@@ -14,26 +14,28 @@
                         <table class="table-fixed text-center">
                             <thead>
                                 <tr class="border">
-                                    <th class="w-1/4 p-3">Product</th>
-                                    <th class="w-1/2 p-3">Quantity</th>
-                                    <th class="w-1/4 p-3">Sub Total Price</th>
+                                    <th class="w-1/4 p-3">Customer Name</th>
+                                    <th class="w-1/2 p-3">Email</th>
+                                    <th class="w-1/4 p-3">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($products as $product)
+                                @foreach($customers as $customer)
                                 <tr class="border">
-                                    <td class="p-3">{{ $product['item']['name'] }}</td>
-                                    <td class="p-3">{{ $product['quantity'] }}</td>
-                                    <td class="p-3">{{ $product['quantity'] * $product['item']['price'] }} $</td>
+                                    <td class="p-3">{{ $customer->name }}</td>
+                                    <td class="p-3">{{ $customer->email }}</td>
+                                    <td class="p-3">
+                                        <a href="{{ route('admin.customers.show', $customer->id) }}">View</a>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
                     </div>
                     
-                    <a href="{{ route('cart.checkout') }}" class="rounded-full w-1/2 border-2 border-transparent bg-blue-500 px-2 py-3 mt-4 text-uppercase text-sm text-white font-bold text-center">Check out</a>
+                    {{ $customers->links() }}
                 </div>
             </div>
         </div>
     </div>
-</x-app-layout>
+</x-admin-layout>

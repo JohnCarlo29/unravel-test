@@ -14,7 +14,10 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $transactions = auth()->user()->orders()->with('products')->get();
+        $transactions = auth()->user()->orders()
+                    ->with('products')
+                    ->orderBy('created_at', 'desc')
+                    ->get();
 
         return view('customer.transaction.index', compact('transactions'));
     }

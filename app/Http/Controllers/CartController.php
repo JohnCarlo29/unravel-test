@@ -45,7 +45,7 @@ class CartController extends Controller
             "amount" => session('cart')->totalPrice * 100,
             "currency" => "sgd",
             "source" => $request->stripeToken,
-            "description" => "Test payment from itsolutionstuff.com."
+            "description" => "Test Payment."
         ]);
 
         $order = auth()->user()->orders()->create([
