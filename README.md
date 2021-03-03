@@ -41,6 +41,16 @@ admin login url: localhost/admin/login
 customer login url: localhost/login
 ```
 
+### Credit card sample for payment
+
+```
+name: John Doe
+card no.: 4111 1111 1111 1111
+cvv: 311
+mm: 12
+yyyy: 2025
+```
+
 ##### **** Note: After running the commands, Please take a look on users table to get a login credential of user. For admin credential just loon on admins table. The default password is "password" without quote **** 
 
 
