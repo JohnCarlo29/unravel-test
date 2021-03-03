@@ -29,6 +29,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::post('/login', [LoginController::class, 'store'])->name('login');
 
     Route::middleware(['auth:admin'])->group(function () {
+        Route::get('/dashboard', function () {
+            return view('admin.dashboard');
+        })->name('dashboard');
+
         Route::get('/customers', [CustomerController::class, 'index'])->name('customers.index');
         Route::get('/customers/{user}', [CustomerController::class, 'show'])->name('customers.show');
 

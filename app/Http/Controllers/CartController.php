@@ -35,11 +35,11 @@ class CartController extends Controller
 
     public function checkout()
     {
-        return view('customer.cart.checkout-b');
+        return view('customer.cart.checkout', ['stripeKey' => env('STRIPE_KEY')]);
     }
 
     public function pay(Request $request)
-    {      
+    {
         \Stripe\Stripe::setApiKey(env('STRIPE_SECRET'));
         $payment = \Stripe\Charge::create([
             "amount" => session('cart')->totalPrice * 100,

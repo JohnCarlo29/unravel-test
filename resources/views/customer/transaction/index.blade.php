@@ -8,7 +8,7 @@
     </x-slot>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <table class="table-fixed">
+            <table class="table-fixed text-center">
                 <thead>
                     <tr class="border">
                         <th class="w-1/4 p-3">Transaction Id</th>
@@ -19,8 +19,8 @@
                 <tbody>
                     @foreach($transactions as $transaction)
                     <tr class="border">
-                        <td class="p-3">{{ $transaction->transaction_id }}</td>
-                        <td class="p-3">
+                        <td class="w-1/4 p-3">{{ $transaction->transaction_id }}</td>
+                        <td class="w-1/2 p-3">
                             <table class="table-fixed w-96">
                                 <thead>
                                     <tr class="border">
@@ -42,7 +42,7 @@
                             </table>
                             </ul>
                         </td>
-                        <td class="p-3">{{ $transaction->total / 100 }} $</td>
+                        <td class="w-1/4 p-3">{{ $transaction->total / 100 }} $</td>
                     </tr>
                     @endforeach
                 </tbody>
