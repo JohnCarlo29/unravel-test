@@ -13,7 +13,7 @@
                     <div class="w-full">
                             <div class="flex">
                                 <span class="w-1/2 font-bold">Transaction ID:</span> 
-                                <span class="w-1/2">{{ $transaction->id }}</span>
+                                <span class="w-1/2">{{ $transaction->transaction_id }}</span>
                             </div>
                             <div class="flex">
                                 <span class="w-1/2 font-bold">Transaction Date:</span>

@@ -21,7 +21,7 @@
                             </div>
                             <div class="flex">
                                 <span class="w-1/2 font-bold">Price</span>
-                                <span class="w-1/2">{{ $product->price }}</span>
+                                <span class="w-1/2">{{ $product->price }}$</span>
                             </div>
                             <div class="flex">
                                 <span class="w-1/2 font-bold">Slug:</span>

@@ -28,9 +28,9 @@
                             </p>
                         </div>
                         <div class="prod-img">
-                            <img src="https://unsplash.com/photos/IJjfPInzmdk/download?force=true&w=1920" class="w-full h-48 object-cover object-center" />
+                            <img src="https://picsum.photos/1280/1920" class="w-full h-48 object-cover object-center" />
                         </div>
-                        <div class="flex flex-col md:flex-row justify-between items-center text-gray-900">
+                        <div class="flex flex-col md:flex-row justify-between items-center mt-4 text-gray-900">
                             <p class="font-bold text-xl">{{ $product->price }} $</p>
                             <form method="POST" action="{{ route('cart.add', $product->id) }}">
                                 @csrf
