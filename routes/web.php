@@ -25,7 +25,7 @@ Route::get('/', function () {
 });
 
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('/login', [LoginController::class, 'create']);
+    Route::get('/login', [LoginController::class, 'create'])->middleware('guest:admin');
     Route::post('/login', [LoginController::class, 'store'])->name('login');
 
     Route::middleware(['auth:admin'])->group(function () {
@@ -40,7 +40,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::get('/transactions/{order}', [TransactionController::class, 'show'])->name('transactions.show');
         Route::resource('/products', AdminProductController::class);
 
-        Route::delete('/logout', [LoginController::class, 'destroy'])->name('logout');
+        Route::post('/logout', [LoginController::class, 'destroy'])->name('logout');
     });
 });
 
