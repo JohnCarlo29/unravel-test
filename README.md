@@ -55,3 +55,9 @@ yyyy: 2025
 
 
 ##### **** Note: the dummy data of transactions will be not match to the breakdowns of products and quantity, that is because is for populating only the database **** 
+
+
+##### **** Please see https://github.com/JohnCarlo29/unravel-test/issues/1 as proof of working application ****
+
+
+##### **** Thank you very much ! ****
